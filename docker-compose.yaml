@@ -4,17 +4,17 @@ services:
 
   mongodb:
     image: mongo
-    container_name: mongodb
+    container_name: mongodb1
     ports:
-      - "27017:27017"
+      - "1000:27017"
     volumes:
       - mongo-data:/data/db
 
   app:
     build: ./app
-    container_name: express-app
+    container_name: express-app1
     ports:
-      - "3000:3000"
+      - "2000:3000"
     env_file:
       - ./app/.env
     depends_on:
